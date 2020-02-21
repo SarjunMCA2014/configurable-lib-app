@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppConfig } from './app-config';
 import { AppDynamicComponent } from './app-dynamic/app-dynamic.component';
 import { AppServiceService } from './app-service.service';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,12 @@ import { AppServiceService } from './app-service.service';
     // // When overridding is not required
     // ConfigurableLibModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_BASE_HREF,
+      useValue: window.location.pathname
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
