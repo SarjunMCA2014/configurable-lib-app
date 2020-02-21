@@ -6,23 +6,26 @@ import { ConfigurableLibModule } from 'configurable-lib';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppConfig } from './app-config';
+import { AppDynamicComponent } from './app-dynamic/app-dynamic.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppDynamicComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
 
-    // // When overridding is required
-    // ConfigurableLibModule.doOverride({
-    //   config: AppConfig
-    // }),
+    // When overridding is required
+    ConfigurableLibModule.doOverride({
+      components: [{ LibDynamicComponent: AppDynamicComponent }],
+      config: AppConfig
+    }),
 
-    // When overridding is not required
-    ConfigurableLibModule
+    // // When overridding is not required
+    // ConfigurableLibModule
   ],
   providers: [],
   bootstrap: [AppComponent]
