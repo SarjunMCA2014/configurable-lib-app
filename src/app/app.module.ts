@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppConfig } from './app-config';
 import { AppDynamicComponent } from './app-dynamic/app-dynamic.component';
+import { AppServiceService } from './app-service.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AppDynamicComponent } from './app-dynamic/app-dynamic.component';
     // When overridding is required
     ConfigurableLibModule.doOverride({
       components: [{ LibDynamicComponent: AppDynamicComponent }],
+      services: { ConfigurableLibService: AppServiceService },
       config: AppConfig
     }),
 

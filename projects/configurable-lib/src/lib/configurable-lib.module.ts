@@ -5,6 +5,7 @@ import { ConfigurableLibComponent } from './configurable-lib.component';
 import { CONFIG_INJ_TOK, LibConfig } from './configurable-lib-config';
 import { LibDynamicComponent } from './lib-dynamic/lib-dynamic.component';
 import { DYNAMIC_COMPONENTS_INJ_TOK } from './configurable-lib.dynamic-components';
+import { ConfigurableLibService } from './configurable-lib.service';
 
 @NgModule({
   declarations: [ConfigurableLibComponent, LibDynamicComponent],
@@ -43,6 +44,10 @@ export class ConfigurableLibModule {
         {
           provide: DYNAMIC_COMPONENTS_INJ_TOK,
           useValue: overrides.components
+        },
+        {
+          provide: ConfigurableLibService,
+          useClass: (overrides && overrides.services && overrides.services.ConfigurableLibService) || ConfigurableLibService
         }
       ]
     };

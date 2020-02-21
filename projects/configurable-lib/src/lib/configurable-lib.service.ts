@@ -9,7 +9,7 @@ export class ConfigurableLibService {
 
   duration: number = 3000;
 
-  constructor(private matSnackBar: MatSnackBar, @Inject(CONFIG_INJ_TOK) private config: any) { }
+  constructor(protected matSnackBar: MatSnackBar, @Inject(CONFIG_INJ_TOK) private config: any) { }
 
   sayHello() {
     this.matSnackBar.open(this.config.sayHello, "Okay", { duration: this.duration });
