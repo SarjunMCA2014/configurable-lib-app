@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "configurable-lib": [
+        "dist/configurable-lib"
+      ],
+      "configurable-lib/*": [
+        "dist/configurable-lib/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
