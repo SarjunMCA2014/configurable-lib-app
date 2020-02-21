@@ -5,6 +5,7 @@ import { ConfigurableLibModule } from 'configurable-lib';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppConfig } from './app-config';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,13 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+
+    // // When overridding is required
+    // ConfigurableLibModule.doOverride({
+    //   config: AppConfig
+    // }),
+
+    // When overridding is not required
     ConfigurableLibModule
   ],
   providers: [],

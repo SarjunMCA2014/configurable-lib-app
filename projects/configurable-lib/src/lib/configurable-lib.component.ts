@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, InjectionToken } from '@angular/core';
 
 import { ConfigurableLibService } from './configurable-lib.service';
+
+export const COMPONENTS_INJ_TOK = new InjectionToken<string>('COMPONENTS_INJ_TOK');
 
 @Component({
   selector: 'lib-configurable-lib',
